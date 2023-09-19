@@ -88,16 +88,11 @@ void Student::SetDegreeProgram(DegreeProgram studentDegreeProgram)
 //Print Method
 void Student::print()
 {
-	std::cout << "Student Id: " << studentId << std::endl;
-	std::cout << "First Name: " << firstName << std::endl;
-	std::cout << "Last Name: " << lastName << std::endl;
-	std::cout << "Email Address: " << emailAddress << std::endl;
-	std::cout << "Age: " << age << std::endl;
-	std::cout << "Days To Complete: " << std::endl;
-	for (size_t x = 0; x < daysToComplete.size(); x++)
-	{
-		std::cout << "Course " << x+1 << ": " << daysToComplete[x] << std::endl;
-	}
-	std::cout << "Degree Program: " << studentDegreeProgram<< std::endl;
+	std::cout << studentId << "\t"
+		<< "First Name: " << firstName << "\t"
+		<< "Last Name: " << lastName << "\t"
+		<< "Age: " << age << "\t"
+		<< "daysInCourse: {" << daysToComplete[0] << ", " << daysToComplete[1] << ", " << daysToComplete[2] << "} "
+		<< "Degree Program: " << studentDegreeProgram << std::endl;
 
 }

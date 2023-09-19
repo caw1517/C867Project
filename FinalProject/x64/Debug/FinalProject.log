@@ -1,10 +1,2 @@
-﻿  Student.cpp
-C:\Users\w_can\OneDrive\Desktop\School\C867 - Scripting and Programming - Applications\Project\FinalProject\FinalProject\Student.cpp(5,10): error C2511: 'Student::Student(std::string,std::string,std::string,std::string,int,const std::array<int,3> &,DegreeProgram)': overloaded member function not found in 'Student'
-C:\Users\w_can\OneDrive\Desktop\School\C867 - Scripting and Programming - Applications\Project\FinalProject\FinalProject\Student.h(9,7): message : see declaration of 'Student'
-C:\Users\w_can\OneDrive\Desktop\School\C867 - Scripting and Programming - Applications\Project\FinalProject\FinalProject\Student.cpp(7,2): error C2671: 'Student::{ctor}': static member functions do not have 'this' pointers
-C:\Users\w_can\OneDrive\Desktop\School\C867 - Scripting and Programming - Applications\Project\FinalProject\FinalProject\Student.cpp(8,2): error C2671: 'Student::{ctor}': static member functions do not have 'this' pointers
-C:\Users\w_can\OneDrive\Desktop\School\C867 - Scripting and Programming - Applications\Project\FinalProject\FinalProject\Student.cpp(9,2): error C2671: 'Student::{ctor}': static member functions do not have 'this' pointers
-C:\Users\w_can\OneDrive\Desktop\School\C867 - Scripting and Programming - Applications\Project\FinalProject\FinalProject\Student.cpp(10,2): error C2671: 'Student::{ctor}': static member functions do not have 'this' pointers
-C:\Users\w_can\OneDrive\Desktop\School\C867 - Scripting and Programming - Applications\Project\FinalProject\FinalProject\Student.cpp(11,2): error C2671: 'Student::{ctor}': static member functions do not have 'this' pointers
-C:\Users\w_can\OneDrive\Desktop\School\C867 - Scripting and Programming - Applications\Project\FinalProject\FinalProject\Student.cpp(12,2): error C2671: 'Student::{ctor}': static member functions do not have 'this' pointers
-C:\Users\w_can\OneDrive\Desktop\School\C867 - Scripting and Programming - Applications\Project\FinalProject\FinalProject\Student.cpp(13,2): error C2671: 'Student::{ctor}': static member functions do not have 'this' pointers
+﻿  Roster.cpp
+  FinalProject.vcxproj -> D:\Projects\School\C687\C867Project\x64\Debug\FinalProject.exe

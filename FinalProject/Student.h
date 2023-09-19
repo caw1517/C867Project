@@ -10,7 +10,7 @@ class Student
 {
 public:
 	//Constructor
-	Student(std::string studentId, std::string firstName, std::string lastName, std::string emailAddress, int age, int* daysToComplete, DegreeProgram studentDegreeProgram);
+	Student(std::string studentId, std::string firstName, std::string lastName, std::string emailAddress, int age, const std::array<int, 3>& daysToComplete, DegreeProgram studentDegreeProgram);
 
 	//Getters
 	std::string GetStudentId();
