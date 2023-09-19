@@ -1,7 +1,26 @@
-#include "Roster.h"
+#include "roster.h"
 
-//Empty Constructor
-Roster::Roster() {}
+//Constructor
+Roster::Roster() 
+{
+	//Init classRoster to empty
+	for (int x = 0; x < classRosterArray.size(); x++)
+	{
+		classRosterArray[x] = nullptr;
+	}
+}
+
+//Destructor
+Roster::~Roster()
+{
+	//Loop through all of the elements
+	for (int x = 0; x < classRosterArray.size(); x++)
+	{
+		//Delete
+		delete classRosterArray[x];
+		classRosterArray[x] = nullptr;
+	}
+}
 
 //Parse Student Info
 void Roster::ParseStudentInformation(const std::string& studentInfo)
@@ -72,7 +91,7 @@ void Roster::add(std::string studentId, std::string firstName, std::string lastN
 	Student* newStudent = new Student(studentId, firstName, lastName, emailAddress, age, days, degreeProgram);
 
 	//Find open space to add student to class array
-	for (int x = 0; x < sizeof(classRosterArray) / sizeof(classRosterArray[0]); x++)
+	for (int x = 0; x < classRosterArray.size(); x++)
 	{
 		//Check if the spot is null
 		if (!classRosterArray[x])
@@ -97,9 +116,9 @@ void Roster::remove(std::string studentId)
 	bool studentFound = false;
 
 	//Find the student
-	for (int x = 0; x < sizeof(classRosterArray)/sizeof(classRosterArray[0]); x++)
+	for (int x = 0; x < classRosterArray.size(); x++)
 	{
-		if (classRosterArray[x]->GetStudentId() == studentId)
+		if (classRosterArray[x] && classRosterArray[x]->GetStudentId() == studentId)
 		{
 			//Once found, delete from classRoster
 			delete classRosterArray[x];
@@ -107,6 +126,7 @@ void Roster::remove(std::string studentId)
 			//Remove pointer
 			classRosterArray[x] = nullptr;
 
+			//Break out of loop
 			studentFound = true;
 			break;
 
@@ -141,7 +161,7 @@ void Roster::printAverageDaysInCourse(std::string studentId)
 	bool studentFound = false;
 
 	//Find the student
-	for (int x = 0; x < sizeof(classRosterArray) / sizeof(classRosterArray[0]); x++)
+	for (int x = 0; x < classRosterArray.size(); x++)
 	{
 		if (classRosterArray[x]->GetStudentId() == studentId)
 		{
@@ -203,5 +223,23 @@ void Roster::printInvalidEmails()
 //Print by degree program
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram)
 {
+	std::cout << "Students in Degree program of " << degreeProgram << ": " << std::endl;
+	//Find All students by degree
+	for (Student* student : classRosterArray)
+	{
+		if (student->GetDegreeProgram() == degreeProgram)
+		{
+			std::cout << student->GetStudentId() << "\t"
+				<< "First Name: " << student->GetFirstName() << "\t"
+				<< "Last Name: " << student->GetLastName() << "\t"
+				<< "Age: " << student->GetAge() << "\t"
+				<< "daysInCourse: {" << student->GetDaysToComplete()[0] << ", " << student->GetDaysToComplete()[1] << ", " << student->GetDaysToComplete()[2] << "} "
+				<< "Degree Program: " << student->GetDegreeProgram() <<  std::endl;
+		}
+	}
+}
 
+std::array<Student*, 5> Roster::GetClassRosterArray()
+{
+	return classRosterArray;
 }

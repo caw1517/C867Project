@@ -1,8 +1,9 @@
 #pragma once
 
 //Includes
-#include <string>
 #include "degree.h"
+
+#include <string>
 #include <array>
 
 //Student Class
